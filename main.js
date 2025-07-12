@@ -25,6 +25,7 @@ const showFatora = () => {
           </tr>
     `;
   });
+  calcTotle();
 };
 //calc total
 const calcTotle = () => {
