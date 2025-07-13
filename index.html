@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
@@ -54,13 +58,18 @@
         <h1 class="m-0 totlePrice">
           Totle Price: <span class="price" id="total">$</span>
         </h1>
-        <button class="btn btn-success" onclick="openModel()">Done Fatora</button>
+        <button class="btn btn-success" onclick="openModel()">
+          Done Fatora
+        </button>
       </div>
     </div>
 
     <!-- Modal -->
     <div id="myModal" onclick="closeModel( )">
-      <div class="bg-white rounded shadow border p-3" onclick="event.stopPropagation">
+      <div
+        class="bg-white rounded shadow border p-3 animate__bounceIn"
+        onclick="event.stopPropagation()"
+      >
         <h4 class="text-capitalize">save Fatora</h4>
         <div class="d-flex align-items-center gap-2 pb-2">
           <i class="bi bi-receipt" style="font-size: 2rem"></i>

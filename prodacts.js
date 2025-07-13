@@ -3,6 +3,10 @@ const prodacts = [
   { name: "iphone 15", price: "500", stockQty: "8", img: "./2.jpg" },
   { name: "iphone 16", price: "550", stockQty: "4", img: "./3.jpg" },
   { name: "iphone 11", price: "300", stockQty: "3", img: "./4.jpg" },
+  { name: "iphone xr", price: "450", stockQty: "5", img: "./1.jpg" },
+  { name: "iphone 15", price: "500", stockQty: "8", img: "./2.jpg" },
+  { name: "iphone 16", price: "550", stockQty: "4", img: "./3.jpg" },
+  { name: "iphone 11", price: "300", stockQty: "3", img: "./4.jpg" },
 ];
 
 let productList = document.querySelector("#product-list");
