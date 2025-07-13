@@ -11,13 +11,13 @@ const showFatora = () => {
   fatoraList.innerHTML = "";
   fatora.forEach((el, index) => {
     fatoraList.innerHTML += `
-<tr class="align-items-center">
+<tr>
             <td>${index + 1}</td>
             <td>${el.name}</td>
             <td>${el.qty}</td>
             <td class="text-white">
-              <button class="btn btn-primary"><i class="bi bi-plus"></i></button>
-              <button class="btn btn-danger"><i class="bi bi-dash"></i></button>
+              <button onclick="incrementQty(${index})" class="btn btn-primary"><i class="bi bi-plus" style="font-size: 1rem;"></i></button>
+              <button onclick="decrementQty(${index})" class="btn btn-danger"><i class="bi bi-dash"></i></button>
               <button class="btn btn-danger ms-2" onclick="removFromFatora(${index})"><i class="bi bi-trash-fill"></i></button>
             </td>
             <td class="price">${el.price}$</td>
@@ -37,7 +37,8 @@ const calcTotle = () => {
 };
 
 //Creat
-const addToFatora = (prodactIndex) => {
+const addToFatora = (btn, prodactIndex) => {
+  btn.remove();
   let prodactObj = prodacts[prodactIndex];
   delete prodactObj.stockQty;
   delete prodactObj.img;
@@ -50,4 +51,29 @@ const addToFatora = (prodactIndex) => {
 const removFromFatora = (deleteIndexFatore) => {
   fatora.splice(deleteIndexFatore, 1);
   showFatora();
+};
+
+//Edit Qty
+const incrementQty = (indexIncrement) => {
+  fatora[indexIncrement].qty++;
+  showFatora();
+};
+
+const decrementQty = (indexDecrement) => {
+  if (fatora[indexDecrement].qty > 1) {
+    fatora[indexDecrement].qty--;
+    showFatora();
+  }
+};
+
+//Model
+
+let modal = document.querySelector("#myModal");
+
+const openModel  = () => {
+  modal.style.display = "flex";
+};
+
+const closeModel = () => {
+  modal.style.display = "none";
 };

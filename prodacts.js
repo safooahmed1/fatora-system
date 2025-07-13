@@ -11,7 +11,7 @@ const showProdacts = () => {
   prodacts.innerHTML = "";
   prodacts.forEach((el, index) => {
     productList.innerHTML += `
-    <div class="bg-white p-3 rounded shadow border d-flex col-4">
+    <div class="bg-light p-3 rounded shadow border d-flex col-3">
       <div class="col-3 d-flex">
         <img class="col-12 rounded" src="${el.img}" alt="${el.name}" />
       </div>
@@ -19,7 +19,7 @@ const showProdacts = () => {
       <div class="ms-4">
         <h1>${el.name}</h1>
           <p class="price">${el.price}$</p>
-          <button onclick="addToFatora(${index})" class="btn btn-primary">Add To Fatora</button>
+          <button onclick="addToFatora(event.target,${index})" class="btn btn-primary">Add To Fatora</button>
         </div>
       </div>
     </div>

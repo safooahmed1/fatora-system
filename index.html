@@ -16,19 +16,25 @@
     <title>متجري</title>
   </head>
   <body class="bg-dark">
-    <h1>مرحبا بك في متجري!</h1>
-
-    <div
-      class="products d-flex overflow-auto col-12 gap-1 p-2"
-      id="product-list"
-    >
-      <!-- المنتجات هتتحط هنا من خلال الجافاسكريبت -->
+    <h1 class="text-light d-flex justify-content-center m-0">
+      مرحبا بك في متجري!
+    </h1>
+    <div class="cart-section">
+      <h2 class="m-0"><i class="bi bi-box-seam"></i> المنتجات</h2>
+      <div
+        class="products d-flex overflow-auto col-12 gap-2 p-2 pb-3"
+        id="product-list"
+      >
+        <!-- المنتجات هتتحط هنا من خلال الجافاسكريبت -->
+      </div>
     </div>
 
     <div class="cart-section">
-      <h2>🛒 سلة المشتريات</h2>
+      <div class="d-flex justify-content-between mb-2">
+        <h2 class="m-0"><i class="bi bi-cart4"></i> سلة المشتريات</h2>
+      </div>
       <table
-        class="table table-dark table-hover table-striped table-bordered col-12"
+        class="shadow-lg table table-dark table-hover table-striped table-bordered col-12"
       >
         <thead>
           <tr>
@@ -42,11 +48,32 @@
         </thead>
         <tbody class="table-light" id="fatoraList">
           <!-- عناصر السلة هتتحط هنا -->
-          
         </tbody>
       </table>
-      <h1 class="totlePrice">Totle Price: <span class="price" id="total">$</span></h1>
+      <div class="d-flex justify-content-between">
+        <h1 class="m-0 totlePrice">
+          Totle Price: <span class="price" id="total">$</span>
+        </h1>
+        <button class="btn btn-success" onclick="openModel()">Done Fatora</button>
+      </div>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" onclick="closeModel( )">
+      <div class="bg-white rounded shadow border p-3" onclick="event.stopPropagation">
+        <h4 class="text-capitalize">save Fatora</h4>
+        <div class="d-flex align-items-center gap-2 pb-2">
+          <i class="bi bi-receipt" style="font-size: 2rem"></i>
+          <input class="form-control" placeholder="Enter Credit Amount" />
+        </div>
+        <p>Remain: <span class="price">20$</span></p>
+        <div class="col-12 d-flex justify-content-between">
+          <button class="btn btn-primary">Calc Remani</button>
+          <button class="btn btn-success">Save Fatora</button>
+        </div>
+      </div>
+    </div>
+
     <script src="./main.js"></script>
     <script src="./prodacts.js"></script>
     <script
